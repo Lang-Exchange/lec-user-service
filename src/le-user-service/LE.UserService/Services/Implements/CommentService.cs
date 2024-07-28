@@ -61,7 +61,6 @@ namespace LE.UserService.Services.Implements
             await _context.SaveChangesAsync();
 
             //publish event
-
             var user = await _context.Users.FirstOrDefaultAsync(x => x.Userid == commentDto.UserId);
             var currentComment = await _context.Comments.Where(x => x.Commentid == comment.Commentid).CountAsync();
             var notifyIds = new List<Guid>();
