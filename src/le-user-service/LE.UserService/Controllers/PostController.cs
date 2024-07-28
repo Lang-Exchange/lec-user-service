@@ -30,6 +30,7 @@ namespace LE.UserService.Controllers
             _requestHeader = requestHeader;
         }
 
+        // Create post
         [HttpPost("{id}/post/create")]
         public async Task<IActionResult> CreatePost(Guid id, PostRequest request, CancellationToken cancellationToken = default)
         {

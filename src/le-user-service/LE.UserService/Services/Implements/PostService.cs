@@ -77,7 +77,7 @@ namespace LE.UserService.Services.Implements
             }
             if (post.IsVideo.Value)
             {
-                var videoPosts = postDto.VideoPost.Select(x => new Videopost { Postid = post.Postid, Url = x.Url }).ToList();
+                var videoPosts = postDto.ImagePost.Select(x => new Videopost { Postid = post.Postid, Url = x.Url }).ToList();
                 await _context.Videoposts.AddRangeAsync(videoPosts);
             }
 
